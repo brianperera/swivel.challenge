@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swivel.Search.ConsoleApp", "Swivel.Search.Console\Swivel.Search.ConsoleApp.csproj", "{7BEEAF86-DB19-47AB-99A2-308618DAB87F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swivel.Search.Service", "Swivel.Search.Service\Swivel.Search.Service.csproj", "{03938903-522B-4E70-80EA-5A15604475FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{577CEFFE-7253-4DBC-BBE2-5F3570DC032C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swivel.Search.Model", "Swivel.Search.Model\Swivel.Search.Model.csproj", "{08D5CAAA-95E7-49D3-BE93-7F36A6C39E37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swivel.Search.Common", "Swivel.Search.Common\Swivel.Search.Common.csproj", "{9012A63F-450A-4510-AA96-77E6868D2C7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9694CB26-F863-43BC-B97B-0AF525791B9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swivel.Search.Service.Test", "Swivel.Search.Service.Test\Swivel.Search.Service.Test.csproj", "{4EE6F6DF-7EF3-4AF6-840C-0427F6C285AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swivel.Search.Test.Helper", "Swivel.Search.Test.Helper\Swivel.Search.Test.Helper.csproj", "{D4DE6312-686E-430E-8202-73FB7ECBEC14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swivel.Search.Repo", "Swivel.Search.Repo\Swivel.Search.Repo.csproj", "{A02CCA73-0263-47ED-8F1C-01D4A912C3DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{381CE6DC-AB32-4539-8F56-F84B1C6CEDE3}"
+	ProjectSection(SolutionItems) = preProject
+		Data\organizations.json = Data\organizations.json
+		Data\tickets.json = Data\tickets.json
+		Data\users.json = Data\users.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swivel.Search.Data", "Swivel.Search.Data\Swivel.Search.Data.csproj", "{0D29307A-3F2F-4BE0-A796-BDE854DBD77B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BEEAF86-DB19-47AB-99A2-308618DAB87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BEEAF86-DB19-47AB-99A2-308618DAB87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BEEAF86-DB19-47AB-99A2-308618DAB87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BEEAF86-DB19-47AB-99A2-308618DAB87F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03938903-522B-4E70-80EA-5A15604475FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03938903-522B-4E70-80EA-5A15604475FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03938903-522B-4E70-80EA-5A15604475FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03938903-522B-4E70-80EA-5A15604475FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D5CAAA-95E7-49D3-BE93-7F36A6C39E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D5CAAA-95E7-49D3-BE93-7F36A6C39E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D5CAAA-95E7-49D3-BE93-7F36A6C39E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D5CAAA-95E7-49D3-BE93-7F36A6C39E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9012A63F-450A-4510-AA96-77E6868D2C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9012A63F-450A-4510-AA96-77E6868D2C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9012A63F-450A-4510-AA96-77E6868D2C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9012A63F-450A-4510-AA96-77E6868D2C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE6F6DF-7EF3-4AF6-840C-0427F6C285AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE6F6DF-7EF3-4AF6-840C-0427F6C285AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE6F6DF-7EF3-4AF6-840C-0427F6C285AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE6F6DF-7EF3-4AF6-840C-0427F6C285AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DE6312-686E-430E-8202-73FB7ECBEC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DE6312-686E-430E-8202-73FB7ECBEC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DE6312-686E-430E-8202-73FB7ECBEC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DE6312-686E-430E-8202-73FB7ECBEC14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A02CCA73-0263-47ED-8F1C-01D4A912C3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02CCA73-0263-47ED-8F1C-01D4A912C3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02CCA73-0263-47ED-8F1C-01D4A912C3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02CCA73-0263-47ED-8F1C-01D4A912C3DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D29307A-3F2F-4BE0-A796-BDE854DBD77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D29307A-3F2F-4BE0-A796-BDE854DBD77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D29307A-3F2F-4BE0-A796-BDE854DBD77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D29307A-3F2F-4BE0-A796-BDE854DBD77B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03938903-522B-4E70-80EA-5A15604475FA} = {577CEFFE-7253-4DBC-BBE2-5F3570DC032C}
+		{08D5CAAA-95E7-49D3-BE93-7F36A6C39E37} = {577CEFFE-7253-4DBC-BBE2-5F3570DC032C}
+		{9012A63F-450A-4510-AA96-77E6868D2C7E} = {577CEFFE-7253-4DBC-BBE2-5F3570DC032C}
+		{4EE6F6DF-7EF3-4AF6-840C-0427F6C285AF} = {9694CB26-F863-43BC-B97B-0AF525791B9C}
+		{D4DE6312-686E-430E-8202-73FB7ECBEC14} = {9694CB26-F863-43BC-B97B-0AF525791B9C}
+		{A02CCA73-0263-47ED-8F1C-01D4A912C3DC} = {577CEFFE-7253-4DBC-BBE2-5F3570DC032C}
+		{0D29307A-3F2F-4BE0-A796-BDE854DBD77B} = {577CEFFE-7253-4DBC-BBE2-5F3570DC032C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {559A54A5-B108-4F12-9ACB-BBD650F7C3CF}
+	EndGlobalSection
+EndGlobal
