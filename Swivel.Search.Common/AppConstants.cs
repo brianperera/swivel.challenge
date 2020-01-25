@@ -2,15 +2,16 @@
 {
     public static class Constants
     {
-        //Paths
         public const string LOG_PATH = "Logs/consoleapp.log";
+        public const string AppSettingsSection = "AppSettings";
+        public const string AppSettingFile = "appsettings.json";
     }
 
     public static class TextResource
     {
         public const string NO_RESULTS_FOUND = "No results found";
         public const string UNEXPECTED_ERROR_OCCURED = "Unexpected error occured. Error logs are sent to the support team.";
-        public const string PRESS_ENTER_CONTINUE = "Press Enter to continue";
+        public const string PRESS_ENTER_CONTINUE = "Press Enter to continue.";
         public const string LOADING = "Loading....";
         public const string INSTRUCTIONS_GENERAL = "Type 'quit' to exit at any time, press 'enter' to continue. " +
                                             "\n\n\n Select search options: \n\t * Press 1 to search " +

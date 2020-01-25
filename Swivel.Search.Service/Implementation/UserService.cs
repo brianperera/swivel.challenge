@@ -25,7 +25,6 @@ namespace Swivel.Search.Service
 
         public List<GenericEntity> Search(string field, string value)
         {
-            throw new Exception("Somthing went wrong");
             var userQueryResult = _userRepo.Serach(field, value).ToList();
 
             if (!userQueryResult.Any())

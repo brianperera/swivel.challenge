@@ -56,7 +56,7 @@ namespace Swivel.Search.ConsoleApp
 
         private static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
         {
-            Console.WriteLine($"{TextResource.UNEXPECTED_ERROR_OCCURED}. {TextResource.PRESS_ENTER_CONTINUE}");
+            Console.WriteLine($"{TextResource.UNEXPECTED_ERROR_OCCURED} {TextResource.PRESS_ENTER_CONTINUE}");
             _notificationService.InternalEmail(TextResource.UNEXPECTED_ERROR_OCCURED, e.ExceptionObject.ToString());
             Console.ReadLine();
             Environment.Exit(1);

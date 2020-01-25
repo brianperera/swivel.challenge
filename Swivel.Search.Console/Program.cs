@@ -15,12 +15,12 @@ namespace Swivel.Search.ConsoleApp
 
             var configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", false)
+            .AddJsonFile(Constants.AppSettingFile, false)
             .Build();
 
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddOptions();
-            serviceCollection.Configure<AppSettings>(configuration.GetSection("Configuration"));
+            serviceCollection.Configure<AppSettings>(configuration.GetSection(Constants.AppSettingsSection));
 
             //Configure DI container
             Startup.ConfigureServices(serviceCollection);
