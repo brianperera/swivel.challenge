@@ -5,7 +5,7 @@ using System;
 
 namespace Swivel.Search.ConsoleApp
 {
-    public class CommandHandler
+    public static class CommandHandler
     {
         internal static void HandleDefaultCommand()
         {
@@ -24,7 +24,7 @@ namespace Swivel.Search.ConsoleApp
             Environment.Exit(1);
         }
 
-        internal static void HandleSearchUsersCommand(IRenderService renderService, IUserService userService, Model.Domain.CommandOutput command)
+        internal static void HandleSearchUsersCommand(IUIService renderService, IUserService userService, Model.Domain.CommandOutput command)
         {
             var output = userService.Search(command.Param1, command.Param2);
             Console.Clear();
@@ -33,7 +33,7 @@ namespace Swivel.Search.ConsoleApp
             Console.Clear();
         }
 
-        internal static void HandleSearchTicketsCommand(IRenderService renderService, ITicketService ticketService, CommandOutput command)
+        internal static void HandleSearchTicketsCommand(IUIService renderService, ITicketService ticketService, CommandOutput command)
         {
             var output = ticketService.Search(command.Param1, command.Param2);
             Console.Clear();
@@ -42,7 +42,7 @@ namespace Swivel.Search.ConsoleApp
             Console.Clear();
         }
 
-        internal static void HandleSearchOrganizationsCommand(IRenderService renderService, IOrganizationService orgService, CommandOutput command)
+        internal static void HandleSearchOrganizationsCommand(IUIService renderService, IOrganizationService orgService, CommandOutput command)
         {
             var output = orgService.Search(command.Param1, command.Param2);
             Console.Clear();
@@ -51,7 +51,7 @@ namespace Swivel.Search.ConsoleApp
             Console.Clear();
         }
 
-        internal static void HandleViewFieldsCommand(IRenderService renderService, IUserService userService, IOrganizationService orgService, ITicketService ticketService, CommandOutput command)
+        internal static void HandleViewFieldsCommand(IUIService renderService, IUserService userService, IOrganizationService orgService, ITicketService ticketService, CommandOutput command)
         {
             var userOutput = userService.GetSearchOptions();
             var orgOutput = orgService.GetSearchOptions();

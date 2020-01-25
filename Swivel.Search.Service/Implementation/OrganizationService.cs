@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Swivel.Search.Common;
 using Swivel.Search.Model.Domain;
 using Swivel.Search.Repo.Interface;
@@ -9,19 +10,17 @@ using System.Linq;
 
 namespace Swivel.Search.Service
 {
-    public class OrganizationService : IOrganizationService
+    public class OrganizationService : BaseService, IOrganizationService
     {
-        private readonly ILogger _logger;
         private readonly IUserRepo _userRepo;
         private readonly IOrganizationRepo _organizationRepo;
         private readonly ITicketRepo _ticketRepo;
 
-        public OrganizationService(IUserRepo userRepo, IOrganizationRepo organizationRepo, ITicketRepo ticketRepo, ILogger<IOrganizationService> logger)
+        public OrganizationService(IUserRepo userRepo, IOrganizationRepo organizationRepo, ITicketRepo ticketRepo, IOptions<AppSettings> settings, ILogger<OrganizationService> logger): base(logger, settings)
         {
             _userRepo = userRepo;
             _organizationRepo = organizationRepo;
             _ticketRepo = ticketRepo;
-            _logger = logger;
         }
 
         public List<string> GetSearchOptions()
@@ -33,7 +32,7 @@ namespace Swivel.Search.Service
         {
             var orgQueryResult = _organizationRepo.Serach(field, value).ToList();
 
-            if (orgQueryResult.Count() == 0)
+            if (!orgQueryResult.Any())
                 _logger.LogDebug($"{TextResource.NO_RESULTS_FOUND} - field: {field}, value: {value}");
 
             //Find dependencies and map

@@ -28,9 +28,6 @@ namespace Swivel.Search.Repo
 
         public IEnumerable<GenericEntity> Serach(string field, string value)
         {
-            if (value == null)
-                return null;
-
             var queryResult = _dataContext.Organizations.OfType<JObject>()
                 .Where(p => p.Property(field) != null && p.Property(field).Name.Equals(field, StringComparison.InvariantCultureIgnoreCase)
                 && p.Property(field).Value.ToString().Equals(value, StringComparison.InvariantCultureIgnoreCase))

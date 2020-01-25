@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Swivel.Search.Data
+﻿namespace Swivel.Search.Data
 {
     public interface IDataStore
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Swivel.Search.Common;
 using Swivel.Search.Model.Domain;
-using Swivel.Search.Repo.Interface;
 using Swivel.Search.Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -9,18 +9,15 @@ using System.Linq;
 
 namespace Swivel.Search.Service
 {
-    public class RenderService : IRenderService
+    public class UIService : BaseService, IUIService
     {
-        private readonly ILogger _logger;
-        
-        public RenderService(ILogger<IUserService> logger)
+        public UIService(IOptions<AppSettings> settings, ILogger<UIService> logger): base(logger, settings)
         {
-            _logger = logger;
         }
 
         public void Render(List<GenericEntity> result, string type)
         {
-            if (result == null || result.Count() == 0)
+            if (result == null || !result.Any())
             {
                 Console.WriteLine(TextResource.NO_RESULTS_FOUND);
                 return;
@@ -47,7 +44,7 @@ namespace Swivel.Search.Service
 
         public void Render(List<string> items, string type)
         {
-            if (items == null || items.Count() == 0)
+            if (items == null || !items.Any())
             {
                 Console.WriteLine(TextResource.NO_RESULTS_FOUND);
                 return;
@@ -67,7 +64,7 @@ namespace Swivel.Search.Service
         public CommandOutput ResolveCommand()
         {
             var command = HandleUserInputCommand(TextResource.INSTRUCTIONS_GENERAL);
-            CommandOutput output = null;
+            CommandOutput output;
 
             switch (command)
             {
@@ -96,7 +93,7 @@ namespace Swivel.Search.Service
         private CommandOutput SelectSearchOptionsCommand()
         {
             var command = HandleUserInputCommand(TextResource.INSTRUCTIONS_SEARCH_CRITERIA);
-            CommandOutput output = null;
+            CommandOutput output;
             string field, value;
 
             switch (command)

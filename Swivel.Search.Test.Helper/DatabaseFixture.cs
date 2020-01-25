@@ -1,22 +1,13 @@
 using Swivel.Search.Data;
 using Swivel.Search.Test.Helper.SeedData;
-using System;
 
 namespace Swivel.Search.Test.Helper
 {
-    public class DatabaseFixture : IDisposable
+    public class DatabaseFixture
     {
-        public static bool init = false;
-        private static readonly object objLock = new object();
-
         public DatabaseFixture()
         {
             UseInmemorySetup();
-        }
-
-        public void Dispose()
-        {
-            DBcontext.Dispose();
         }
 
         private void UseInmemorySetup()

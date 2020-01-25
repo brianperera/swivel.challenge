@@ -2,24 +2,39 @@
 using Swivel.Search.Common;
 using Swivel.Search.Service.Interface;
 using System;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace Swivel.Search.ConsoleApp
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine(TextResource.LOADING);
 
-            Startup.InitCoreSupportModules();
+            var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", false)
+            .Build();
+
             var serviceCollection = new ServiceCollection();
-            Startup.ConfigureServices(serviceCollection); //Dependency inject services
-            Startup.ConfigureRepositories(serviceCollection); //Dependency inject repos
+            serviceCollection.AddOptions();
+            serviceCollection.Configure<AppSettings>(configuration.GetSection("Configuration"));
+
+            //Configure DI container
+            Startup.ConfigureServices(serviceCollection);
+            Startup.ConfigureRepositories(serviceCollection);
+            
+            //Get service from DI container
             var serviceProvider = serviceCollection.BuildServiceProvider();
-            var renderService = serviceProvider.GetService<IRenderService>();
+            var notificationService = serviceProvider.GetService<INotificationService>();
+            var renderService = serviceProvider.GetService<IUIService>();
             var userService = serviceProvider.GetService<IUserService>();
             var orgService = serviceProvider.GetService<IOrganizationService>();
             var ticketService = serviceProvider.GetService<ITicketService>();
+            
+            Startup.InitCoreSupportModules(notificationService);
 
             Console.Clear(); //Loading complete
 

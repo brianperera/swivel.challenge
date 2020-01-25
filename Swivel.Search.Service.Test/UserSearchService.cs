@@ -1,4 +1,3 @@
-using Swivel.Search.Service.Interface;
 using Swivel.Search.Test.Helper;
 using System;
 using System.Linq;
@@ -32,7 +31,8 @@ namespace Swivel.Search.Service.Test
 
         [Theory]
         [InlineData("_id", "10")]
-        public void SearchInvlidUser(string field, string value)
+        [InlineData("gender", "male")]
+        public void SearchInvlidUserValue(string field, string value)
         {
             var result = _userSearch.Search(field, value).FirstOrDefault();
             Assert.Null(result);

@@ -8,7 +8,7 @@ namespace Swivel.Search.Repo
 {
     public class BaseRepo
     {
-        readonly ILogger<BaseRepo> _logger;
+        internal readonly ILogger<BaseRepo> _logger;
         internal readonly DataContext _dataContext;
 
         public BaseRepo(IDataStore dataStore, ILogger<BaseRepo> logger)
@@ -22,7 +22,7 @@ namespace Swivel.Search.Repo
         internal List<KeyValuePair<string, object>> MapProperties(JObject obj)
         {
             if (obj == null)
-                return null;
+                return new List<KeyValuePair<string, object>>();
 
             return obj.Descendants().OfType<JProperty>().Select(d => MapProperty(d)).ToList();
         }

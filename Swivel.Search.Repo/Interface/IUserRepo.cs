@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using Swivel.Search.Model.Domain;
-using System;
+﻿using Swivel.Search.Model.Domain;
 using System.Collections.Generic;
 
 namespace Swivel.Search.Repo.Interface

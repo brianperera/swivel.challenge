@@ -12,8 +12,13 @@ namespace Swivel.Search.ConsoleApp
 {
     public static class Startup
     {
-        internal static void InitCoreSupportModules()
+        private static INotificationService _notificationService;
+
+        internal static void InitCoreSupportModules(INotificationService notificationService)
         {
+            //Notifications
+            _notificationService = notificationService;
+
             //Logging
             Log.Logger = new LoggerConfiguration().WriteTo.File(Constants.LOG_PATH).CreateLogger();
 
@@ -29,7 +34,8 @@ namespace Swivel.Search.ConsoleApp
                     .AddSingleton<IUserService, UserService>()
                     .AddSingleton<IOrganizationService, OrganizationService>()
                     .AddSingleton<ITicketService, TicketService>()
-                    .AddSingleton<IRenderService, RenderService>();
+                    .AddSingleton<IUIService, UIService>()
+                    .AddSingleton<INotificationService, MockNotificationService>(); //We will setup a mock notification service
         }
 
         internal static void ConfigureRepositories(IServiceCollection services)
@@ -50,10 +56,8 @@ namespace Swivel.Search.ConsoleApp
 
         private static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
         {
-            Console.WriteLine(e.ExceptionObject.ToString());
             Console.WriteLine($"{TextResource.UNEXPECTED_ERROR_OCCURED}. {TextResource.PRESS_ENTER_CONTINUE}");
-
-            //TODO: Trigger email to notify dev team.
+            _notificationService.InternalEmail(TextResource.UNEXPECTED_ERROR_OCCURED, e.ExceptionObject.ToString());
             Console.ReadLine();
             Environment.Exit(1);
         }

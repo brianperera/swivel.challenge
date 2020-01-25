@@ -1,5 +1,4 @@
 ﻿using Swivel.Search.Model.Domain;
-using System;
 using System.Collections.Generic;
 
 namespace Swivel.Search.Repo.Interface

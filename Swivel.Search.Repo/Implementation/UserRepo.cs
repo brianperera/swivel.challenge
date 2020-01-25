@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
-using Swivel.Search.Common;
 using Swivel.Search.Data;
 using Swivel.Search.Model.Domain;
 using Swivel.Search.Repo.Interface;

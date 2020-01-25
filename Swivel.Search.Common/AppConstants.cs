@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Swivel.Search.Common
+﻿namespace Swivel.Search.Common
 {
     public static class Constants
     {
@@ -11,7 +9,7 @@ namespace Swivel.Search.Common
     public static class TextResource
     {
         public const string NO_RESULTS_FOUND = "No results found";
-        public const string UNEXPECTED_ERROR_OCCURED = "Unexpected error occured";
+        public const string UNEXPECTED_ERROR_OCCURED = "Unexpected error occured. Error logs are sent to the support team.";
         public const string PRESS_ENTER_CONTINUE = "Press Enter to continue";
         public const string LOADING = "Loading....";
         public const string INSTRUCTIONS_GENERAL = "Type 'quit' to exit at any time, press 'enter' to continue. " +
@@ -49,19 +47,18 @@ namespace Swivel.Search.Common
         //User
         public const string ID = "_id";
         public const string NAME = "name";
-        public static string ASSIGNED_USERS = "assigned_users";
-        public static string SUBMITTED_USERS = "submitted_users";
+        public const string ASSIGNED_USERS = "assigned_users";
+        public const string SUBMITTED_USERS = "submitted_users";
 
         //Organization
-        public static string ORGANIZATION_ID = "organization_id";
-        public static string ORGANIZATION_NAME = "organization_name";
+        public const string ORGANIZATION_ID = "organization_id";
+        public const string ORGANIZATION_NAME = "organization_name";
         
         //Ticket
-        public static string ASSIGNEE_ID = "assignee_id";
-        public static string SUBMITTER_ID = "submitter_id";
-        public static string SUBJECT = "subject";
-        public static string ASSIGNED_TICKET = "assigned_ticket";
-        public static string SUBMITTED_TICKET = "submitted_ticket";
-
+        public const string ASSIGNEE_ID = "assignee_id";
+        public const string SUBMITTER_ID = "submitter_id";
+        public const string SUBJECT = "subject";
+        public const string ASSIGNED_TICKET = "assigned_ticket";
+        public const string SUBMITTED_TICKET = "submitted_ticket";
     }
 }
