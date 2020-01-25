@@ -15,9 +15,9 @@ A simple search application that facilitates searching of json content.
         --- Core
               --- Swivel.Search.Service
               --- Swivel.Search.Repo
-              --- Swivel.Search.Service
               --- Swivel.Search.Data
               --- Swivel.Search.Model
+              --- Swivel.Search.Common
         --- Test
               --- Swivel.Search.Service.Test
               --- Swivel.Search.Test.Helper
