@@ -13,21 +13,25 @@ A simple search application that facilitates searching of json content.
 * xunit (unit testing framework)
 
 # Solution structure
-      -- Swivel.Search
-        --- Swivel.Search.ConsoleApp
-        --- Core
-              --- Swivel.Search.Service
-              --- Swivel.Search.Repo
-              --- Swivel.Search.Data
-              --- Swivel.Search.Model
-              --- Swivel.Search.Common
-        --- Test
-              --- Swivel.Search.Service.Test
-              --- Swivel.Search.Test.Helper
-        --- Data
-              --- organizations.json
-              --- tickets.json
-              --- users.json
+      Swivel.Search (Solution)
+      |
+      |_____ Swivel.Search.ConsoleApp (Main App)
+      |
+      |_____ Core (Core framework)
+      |      |____ Swivel.Search.Service
+      |      |____ Swivel.Search.Repo
+      |      |____ Swivel.Search.Data
+      |      |____ Swivel.Search.Model
+      |      |____ Swivel.Search.Common
+      |
+      |_____ Test (xunit projects)
+      |      |____ Swivel.Search.Service.Test
+      |      |____ Swivel.Search.Test.Helper
+      |  
+      |_____ Data (JSON data files)
+             |____ organizations.json
+             |____ tickets.json
+             |____ users.json
               
 # Instructions to run the app
 1. Download the zip file from the following location
