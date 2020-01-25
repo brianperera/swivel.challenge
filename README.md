@@ -1,4 +1,4 @@
-# Swivel Challenge
+# Swivel Code Challenge
 A simple search application that facilitates searching of json content.
 
 # Tech stack
