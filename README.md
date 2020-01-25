@@ -3,6 +3,9 @@ A simple search application that facilitates searching of json content.
 
 # Tech stack
 * .NET Core 3.0
+
+# IDE
+* Visual Studio 2019 community 
  
 # Libraries used
 * Newtonsoft.json
