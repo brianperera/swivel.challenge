@@ -35,6 +35,6 @@ A simple search application that facilitates searching of json content.
               
 # Instructions to run the app
 1. Download the "Published.zip" file from the following location
-2. Unzip the "Published.zip" and run "Swivel.Challenge.exe"
+2. Unzip the "Published.zip" and run "run.bat". Alternatively you can run the "Swivel.Search.ConsoleApp.exe" file inside the "Libraries" folder
 
 Note: You can also build & run the app on visual studio 2019 community version. The start-up project is "Swivel.Search.Console".
